@@ -1,1 +1,22 @@
+students_dict = {
+    1: "Pranav",
+    2: "Rahul",
+    3: "Aman"
+}
 
+print("Original Dictionary:", students_dict)
+
+students_dict[4] = "Rohan"
+print("After Adding:", students_dict)
+
+students_dict[2] = "Rohit"
+print("After Updating:", students_dict)
+
+del students_dict[3]
+print("After Deleting:", students_dict)
+
+students_tuple = ("Pranav", "Rahul", "Aman")
+print("Tuple of Students:", students_tuple)
+
+students_list = ["Pranav", "Rahul", "Aman"]
+print("List of Students:", students_list)
