@@ -1,1 +1,12 @@
+def check_triangle(a, b, c):
+    sides = sorted([a, b, c])
+    return sides[0]**2 + sides[1]**2 == sides[2]**2
 
+a = float(input("Enter first side: "))
+b = float(input("Enter second side: "))
+c = float(input("Enter third side: "))
+
+if check_triangle(a, b, c):
+    print("It is a right-angled triangle")
+else:
+    print("It is not a right-angled triangle")
