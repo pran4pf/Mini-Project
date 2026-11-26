@@ -1,0 +1,51 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Creating sample student dataset
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
+    'Study_Hours': [2, 3, 4, 5, 6],
+    'Marks': [65, 70, 78, 85, 92],
+    'Attendance': [75, 80, 85, 90, 95]
+}
+
+df = pd.DataFrame(data)
+
+print("Dataset:")
+print(df)
+
+# Line Plot
+plt.figure(figsize=(6, 4))
+plt.plot(df['Name'], df['Marks'], marker='o')
+plt.title("Line Plot - Student Marks")
+plt.xlabel("Student")
+plt.ylabel("Marks")
+plt.grid()
+plt.show()
+
+# Bar Plot
+plt.figure(figsize=(6, 4))
+plt.bar(df['Name'], df['Marks'])
+plt.title("Bar Plot - Student Marks")
+plt.xlabel("Student")
+plt.ylabel("Marks")
+plt.show()
+
+# Scatter Plot
+plt.figure(figsize=(6, 4))
+sns.scatterplot(data=df, x='Study_Hours', y='Marks')
+plt.title("Scatter Plot - Study Hours vs Marks")
+plt.xlabel("Study Hours")
+plt.ylabel("Marks")
+plt.show()
+
+# Heatmap
+plt.figure(figsize=(6, 4))
+sns.heatmap(
+    df[['Study_Hours', 'Marks', 'Attendance']].corr(),
+    annot=True,
+    cmap='coolwarm'
+)
+plt.title("Heatmap - Correlation")
+plt.show()
